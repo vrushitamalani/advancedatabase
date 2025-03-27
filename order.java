@@ -1,0 +1,15 @@
+CREATE TABLE Orders (
+    OrderID INT AUTO_INCREMENT PRIMARY KEY,
+    UserID INT,
+    OrderDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    TotalAmount DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+
+INSERT INTO Orders (UserID, OrderDate, TotalAmount) VALUES 
+(1, '2023-09-02', 5000.00),
+(2, '2019-04-12', 8000.00),
+(3, '2018-10-10', 12000.00);
+
+
+SELECT * FROM ecommercedb.order;
